@@ -1,0 +1,64 @@
+$('.partner-carousel').owlCarousel({
+    loop:true,
+    margin:24,
+    nav:false,
+    navText:["<i class='fa-solid fa-chevron-left'></i>","<i class='fa-solid fa-chevron-right'></i>"],
+    autoplay:false,
+    autoplayTimeout:1000,
+    autoplayHoverPause:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:2
+        },
+        1000:{
+            items:5,
+            dots:false
+        }
+    }
+});
+$('.testimonial-carousel').owlCarousel({
+    loop:true,
+    margin:24,
+    nav:false,
+    dots:true,
+    navText:["<i class='fa-solid fa-chevron-left'></i>","<i class='fa-solid fa-chevron-right'></i>"],
+    autoplay:false,
+    autoplayTimeout:1000,
+    autoplayHoverPause:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+});
+$('.blog-carousel').owlCarousel({
+    loop:true,
+    margin:24,
+    nav:true,
+    dots:false,
+    navText:["<i class='fa-solid fa-chevron-left'></i>","<i class='fa-solid fa-chevron-right'></i>"],
+    autoWidth: true,
+    autoplay:false,
+    autoplayTimeout:1000,
+    autoplayHoverPause:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        768:{
+            items:2
+        },
+        992:{
+            items:3
+        }
+    }
+});
