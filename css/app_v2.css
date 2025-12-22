@@ -617,11 +617,11 @@ a:hover {
 }
 
 .blue .postcard__title:hover {
-    color: #ff522c;
+    color: #ff0000;
 }
 
 .blue .postcard__bar {
-    background-color: #ff522c;
+    background-color: #ff0000;
 }
 
 .blue::before {
@@ -956,7 +956,7 @@ a:hover {
 }
 .nevber .box-line .box-line-li:hover::before {
     width: 100%;
-    background: #ff522c;
+    background: #ff0000;
     height: 5%;
 }
 .nevber .box-line .box-line-li:hover {
@@ -982,7 +982,7 @@ a:hover {
 }
 
 .Step:hover {
-    box-shadow: 5px 5px 20px 10px #ff522c;
+    box-shadow: 5px 5px 20px 10px #ff0000;
     transition: 0.3s ease-in-out;
 }
 
@@ -1023,8 +1023,8 @@ a:hover {
     --clr-green-500: #28a745;
     --clr-primary: #ff0000;
    
-   --primary-gradient: linear-gradient(269.37deg, #ff0000.63%, #ff522c 97.13%);
-    --text-gradient: linear-gradient(269.37deg, #ff0000 52.63%, #ff522c 97.13%);
+   --primary-gradient: linear-gradient(269.37deg, #ff0000.63%, #000000 97.13%);
+    --text-gradient: linear-gradient(269.37deg, #ff0000 52.63%, #000000 97.13%);
 }
 :root {
     --animate-delay: 0.5s;
@@ -1033,7 +1033,7 @@ body {
 	  font-family:  'Open Sans';
   }
 .text-gradient {
-    background: linear-gradient(269.37deg, #ff0000.63%, #ff522c 97.13%);
+    background: linear-gradient(269.37deg, #ff0000.63%, #000000 97.13%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1531,7 +1531,7 @@ span.rotated {
     padding: 1rem 2.4rem;
 }
 .partner-section .card:first-child {
-    background: linear-gradient(269.37deg, #ffa500 52.63%, #ff522c 97.13%);
+    background: linear-gradient(269.37deg, #ff0000 52.63%, #000000 97.13%);
 }
 .partner-section .card:first-child .vline {
     border-color: var(--clr-white);
@@ -1546,7 +1546,7 @@ span.rotated {
     color: var(--clr-primary);
 }
 .partner-section .card:nth-child(3) .title {
-    color: #ff522c;
+    color: #ff0000;
 }
 .partner-section .card .title {
     display: block;
@@ -1586,7 +1586,7 @@ span.rotated {
     background: #999;
 }
 .partner-carousel.owl-carousel button.owl-dot.active span {
-    background: #ff522c;
+    background: #ff0000;
 }
 /*========= Media Query ==========*/
 @media (min-width: 576px) {
@@ -2096,7 +2096,7 @@ footer {
 .why-choose-us {
     position: relative;
     padding: 30px 0;
-    background: linear-gradient(to right, #ffa500 60%, #ff522c);
+    background: linear-gradient(to right, #ff0000 60%, #000000);
     z-index: 5;
 }
 .why-choose-us .partner-circle {
@@ -2185,7 +2185,7 @@ footer {
 .page-banner-section {
     position: relative;
 
-    background: linear-gradient(269.37deg, #63f5e9.93%, #ff2121 97.13%);
+    background: linear-gradient(269.37deg, #ff0000.93%, #000000 97.13%);
     padding: 50px 0 100px;
     margin-top: -50px;
     transform: skew(0deg, -3deg);
