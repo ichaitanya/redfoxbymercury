@@ -477,7 +477,7 @@ s0.parentNode.insertBefore(s1,s0);
                         </div>
                         <h3 class="title">Corporate Business Contact</h3>
                         <ul>
-                            <li><a href="tel:+91-9876543210">+91-9876543210</a></li>
+                            <li><a href="tel:+91-9876543210">+91-916777 5222</a></li>
                             <li><a href="mailto:contact@maesta.com">contact@redfox.com</a></li>
                         </ul>
                     </div>
@@ -531,7 +531,7 @@ s0.parentNode.insertBefore(s1,s0);
                             <a href="https://www.facebook.com/business/partner-directory/search?solution_type=messaging&platforms=whatsapp&id=7564196673687245&section=overview" target="_blank"><img src="images/c7572e24b8abb82edc80652ee738ecde.png" style="width: 174px; height: auto;" alt="ALOT DIGITAL SOLUTIONS INDIA PVT LTD - Meta Business Partner"></a>
                         </div> -->
                     </div>
-                    <p class="">WRITE DESCRIPTION</p>
+                    <p class="">RedFox – Celebrating over a decade of excellence as a premier Bulk SMS, Voice Call, and Mobile Value-Added Services (VAS) provider.</p>
                 </div>
             </div>
 
@@ -698,6 +698,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
     </script>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function() {
+        emailjs.init("JvbeSHly8I9hCxNSw"); // Replace with your public key
+    })();
+</script>
+
         <script type="text/javascript">
         $("#contactUsForm").validate({
             rules: {
@@ -733,33 +740,35 @@ document.addEventListener("DOMContentLoaded", () => {
                 message: "Please enter message!",
             },
             submitHandler: function(form) {
-                $('#contactUsFormBtn').attr('disabled', true);
-                $('#contactUsFormBtn').html('Processing <i class="fa fa-spinner fa-spin"></i>');
-                var serializedData = $(form).serialize();
-                $.ajax({
-                    headers: {
-                        'X-CSRF-Token': $('input[name="_token"]').val()
-                    },
-                    type: 'post',
-                    url: "/contact-us.html",
-                    data: serializedData,
-                    dataType: 'json',
-                    success: function(data) {
-                        if (data.status == true) {
-                            $('#contactUsForm')[0].reset()
-                            $('#contactUsFormBtn').attr('disabled', false);
-                            $('#contactUsFormBtn').html('Processing <i class="fa-check"></i>');
-                            toastr.options.timeOut = 10000;
-                            toastr.success(data.message);
-                        }
-                        if (data.status == false) {
-                            toastr.options.timeOut = 10000;
-                            toastr.error(data.message);
-                        }
-                    }
-                });
-                return false;
-            }
+    $('#contactUsFormBtn').attr('disabled', true);
+    $('#contactUsFormBtn').html('Sending <i class="fa fa-spinner fa-spin"></i>');
+    
+    // Collect form data
+    var formData = {
+        name: $('#name').val(),
+        email: $('#email').val(),
+        contact_number: $('#contact_number').val(),
+        company_name: $('#company_name').val(),
+        service: $('#service').val(),
+        city: $('#city').val(),
+        message: $('#message').val()
+    };
+    
+    // Send via EmailJS
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+        .then(function(response) {
+            $('#contactUsForm')[0].reset();
+            $('#contactUsFormBtn').attr('disabled', false);
+            $('#contactUsFormBtn').html('Submit');
+            toastr.success('Thank you! Your message has been sent successfully.');
+        }, function(error) {
+            $('#contactUsFormBtn').attr('disabled', false);
+            $('#contactUsFormBtn').html('Submit');
+            toastr.error('Failed to send message. Please try again.');
+        });
+    
+    return false;
+}
         });
     </script>
 
@@ -827,7 +836,7 @@ document.addEventListener("DOMContentLoaded", () => {
     'X-CSRF-Token': $('input[name="_token"]').val()
     },
     type: 'post',
-    url: "",
+    url: "tututututut",
     data: serializedData,
     dataType: 'json',
     success: function(data) {
