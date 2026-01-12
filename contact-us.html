@@ -7,7 +7,7 @@
 
     
         <meta name="description" content="Click here and submit the contact form in case you have any queries regarding the bulk messaging service.">
-    <link rel="canonical" href="https://maesta.com/contact-us">
+    <link rel="canonical" href="https://redfox.com/contact-us">
         <title>Contact Form | Reach To Us </title>
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
@@ -31,6 +31,16 @@
 <script defer="" src="https://analytics.alots.org/pixel/oLlfTOdiu4ZEZZJq"></script>
 <!-- END Pixel Code -->
 <!--Start of Tawk.to Script-->
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "JvbeSHly8I9hCxNSw",
+      });
+   })();
+</script>
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -232,6 +242,17 @@ s0.parentNode.insertBefore(s1,s0);
         box-sizing: border-box;
         transition: all 200ms linear;
     }
+     .btn-purple {
+            background-color: #ff0000;
+            border-color: #ff0000;
+            color: white;
+        }
+        
+        .btn-purple:hover {
+            background-color: #000000;
+            border-color: #5a32a3;
+            color: white;
+        }
 </style>
 
 </head>
@@ -381,62 +402,27 @@ s0.parentNode.insertBefore(s1,s0);
                 </div>
                 <div class="col-lg-6 offset-lg-1">
                     <div class="card contact-form mb-3 mb-lg-0">
-                        <form action="/contact-us.html" method="POST" id="contactUsForm">
-                            <input type="hidden" name="_token" value="nWfBPRnnBAG264VhtKQbgXtqDHptYxdXPkjH3Yih">                            <div class="row">
-                                <div class="col-lg-6 mb-3">
-                                    <label for="name" class="form-label">Your Name</label>
-                                    <input type="text" name="name" class="form-control" placeholder="Enter Full Name" id="name" required="">
-                                </div>
-                                <div class="col-lg-6 mb-3">
-                                    <label for="email" class="form-label">Email address</label>
-                                    <input type="email" name="email" class="form-control" placeholder="Enter your mail ID" id="email" required="">
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-6 mb-3">
-                                    <label for="contact_number" class="form-label">Contact No</label>
-                                    <input type="text" name="contact_number" class="form-control" placeholder="91+" id="contact_number" required="">
-                                </div>
-                                <div class="col-lg-6 mb-3">
-                                    <label for="company_name" class="form-label">Company Name</label>
-                                    <input type="text" name="company_name" class="form-control" placeholder="Enter your company name" id="company_name" required="">
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-6 mb-3">
-                                    <label for="service" class="form-label">Service</label>
-                                    <select name="service" class="form-select" id="service" required="">
-                                        <option value="">Choose your service</option>
-                                        <option value="Bulk messaging">Bulk messaging</option>
-                                        <option value="WhatsApp Business API">WhatsApp Business API</option>
-                                        <option value="Voice Calls">Voice Calls</option>
-                                        <option value="Google Verified SMS">Google Verified SMS</option>
-                                        <option value="MMS">MMS</option>
-                                        <option value="Chat Bot">Chat Bot</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-6 mb-3">
-                                    <label for="city" class="form-label">City</label>
-                                    <input type="text" name="city" class="form-control" placeholder="Enter your city" id="city" required="">
-                                </div>
-                            </div>
-
+                        <form id="simpleContactForm">
+                            <input type="hidden" name="_token" value="nWfBPRnnBAG264VhtKQbgXtqDHptYxdXPkjH3Yih">
+                            
                             <div class="mb-3">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea name="message" class="form-control" rows="3" id="message" required=""></textarea>
-
-                                <div class="form-check my-3">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required="">
-                                    <label class="form-label" for="flexCheckDefault">
-                                        I accept all the terms and condition to the website <a href="/terms-and-conditions" style="color: rgb(255, 0, 0);">terms and conditions</a> and
-                                        <a href="/privacy-policy" style="color: rgb(255, 0, 0);"> privacy and policy</a>
-                                    </label>
-                                </div>
-                            </div>  
-                            <button class="btn btn-solid px-4 rounded-5" id="contactUsFormBtn" type="submit">Send
-                                Message</button>
+                                <label for="name" class="form-label">Your Name *</label>
+                                <input type="text" name="name" class="form-control" placeholder="Enter your full name" id="name" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" name="email" class="form-control" placeholder="Enter your email" id="email" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea name="message" class="form-control" rows="4" placeholder="Enter your message" id="message" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-purple w-100" id="submitBtn">
+                                Send Message
+                            </button>
                         </form>
                     </div>
                     </div>
@@ -457,14 +443,14 @@ s0.parentNode.insertBefore(s1,s0);
                 <div class="col-lg-6">
                     <div class="card border-0">
                         <h3 class="title">Address</h3>
-                        <p>Borivali, Mumbai</p>
+                        <p>1609 Floor 16, 9, Business Bay Off, New Link Rd, behind Evershine Mall, Malad W, Mumbai, Maharashtra 400064</p>
                         <div class="row mb-3">
                             <div class="col-lg-6">
                                 <h3 class="title">Sales Contact</h3>
                                 <ul>
                                     <li><a href="tel:+91-9876543210">+91-916777 5222</a></li>
                                     <!-- <li><a href="tel:+91-9876543210">+91-9876543210</a></li> -->
-                                    <li><a href="mailto:sales@maesta.com">sales@redfox.com</a></li>
+                                    <li><a href="mailto:sales@maesta.com">redfoxtele@gmail.com</a></li>
                                 </ul>
                             </div>
                             <div class="col-lg-6">
@@ -472,14 +458,14 @@ s0.parentNode.insertBefore(s1,s0);
                                 <ul>
                                     <li><a href="tel:+91-9876543210">+91-916777 5222</a></li>
                                     <!-- <li><a href="tel:+91-9876543210">+91-9876543210</a></li> -->
-                                    <li><a href="mailto:sales@maesta.com">sales@redfox.com</a></li>
+                                    <li><a href="mailto:sales@maesta.com">redfoxtele@gmail.com</a></li>
                                 </ul>
                             </div>
                         </div>
                         <h3 class="title">Corporate Business Contact</h3>
                         <ul>
                             <li><a href="tel:+91-9876543210">+91-916777 5222</a></li>
-                            <li><a href="mailto:contact@maesta.com">contact@redfox.com</a></li>
+                            <li><a href="mailto:contact@maesta.com">redfoxtele@gmail.com</a></li>
                         </ul>
                     </div>
                     <!--/Card -->
@@ -536,21 +522,19 @@ s0.parentNode.insertBefore(s1,s0);
                 </div>
             </div>
 
-           <div class="col-lg-2 col-6">
+            <div class="col-lg-2 col-6">
                 <div class="footer-links mb-3 mb-lg-0">
                     <h3 class="footer-title" style="color: #000000">Company</h3>
                     <ul>
                         <li><a href="/about.html " class="hover-border mt-2" style="color: #000000; font-weight: 400; font-size: 14px; display: inline;">About us</a></li>
                         <li style="margin-top: 5px"><a href="/why-us.html" class="hover-border mt-2" style="color: #000000; font-weight: 400; font-size: 14px; display: inline;">Why us</a></li>
                         <li style="margin-top: 5px"><a href="/contact-us.html" class="hover-border mt-2" style="color: #000000; font-weight: 400; font-size: 14px; display: inline;">Contact us</a></li>
-                                     <li style="margin-top: 5px"><a href="/certificate.html" class="hover-border mt-2" style="color: #000000; font-weight: 400; font-size: 13px ; display: inline;">Certificates</a></li>
-                        
-                        
+                        <!-- <li style="margin-top: 5px"><a href="/certificate.html" class="hover-border mt-2" style="color: #000000; font-weight: 400; font-size: 13px ; display: inline;">Certificates</a></li> -->
                     </ul>
                 </div>
             </div>
 
-            <div class="col-lg-2 col-6">
+            <div class="col-lg-4 col-8">
                 <div class="footer-links mb-3 mb-lg-0">
                     <h3 class="footer-title"><a style="text-decoration: none ; color: #000000;" href="/service.html">Services</a>
                     </h3>
@@ -588,7 +572,7 @@ s0.parentNode.insertBefore(s1,s0);
         </div> -->
         <!--/Row -->
         <div class=" mb-3 mb-lg-0">
-             <p><span>Contact us : </span><a href="mailto:support@redfox.com" class="hover-border" style="text-decoration: none; color: black">contact@redfox.com </a> | <a href="tel:+91-916777 5222" class="hover-border" style="text-decoration: none; color: black">+91-916777 5222</a> | <a href="/privacy-policy" class="hover-border" style="text-decoration: none; color: black">Privacy Policy</a> | <a href="/terms-and-conditions" class="hover-border" style="text-decoration: none; color: black">Terms & Conditions</a> | <a href="/cancellation-refund-policy" class="hover-border" style="text-decoration: none; color: black">Cancellation & Refund
+            <p><span>Contact us : </span><a href="mailto:redfoxtele@gmail.com" class="hover-border" style="text-decoration: none; color: black">redfoxtele@gmail.com </a> | <a href="tel:+91-916777 5222" class="hover-border" style="text-decoration: none; color: black">+91-916777 5222</a> | <a href="/privacy-policy.html" class="hover-border" style="text-decoration: none; color: black">Privacy Policy</a> | <a href="/terms-and-conditions.html" class="hover-border" style="text-decoration: none; color: black">Terms & Conditions</a> | <a href="/cancellation-refund-policy.html" class="hover-border" style="text-decoration: none; color: black">Cancellation & Refund
                     Policy</a> </p>
             <p></p>
         </div>
@@ -604,15 +588,15 @@ s0.parentNode.insertBefore(s1,s0);
         <section class="copyright">
             <div class="row align-items-lg-center justify-content-lg-between">
                 <div class="col-lg-6">
-                    <p>© 2025 RedFox Solutions. <span> All Rights Reserved.</span></p>
+                    <p>© 2025 Maesta Solutions. <span> All Rights Reserved.</span></p>
                 </div>
                 <div class="col-lg-6">
                     <ul class="social-links text-lg-end">
-                        <li><a href=""><i class="fa-brands fa-twitter" target="_blank"></i></a>
+                        <!-- <li><a href=""><i class="fa-brands fa-twitter" target="_blank"></i></a> -->
                         </li>
-                        <li><a href="" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="https://www.facebook.com/login/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
                         <li><a href="https://www.instagram.com/accounts/emailsignup/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+                        <!-- <li><a href="" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li> -->
                     </ul>
                 </div>
             </div>
@@ -702,174 +686,31 @@ document.addEventListener("DOMContentLoaded", () => {
 });
     </script>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script type="text/javascript">
-    (function() {
-        emailjs.init("JvbeSHly8I9hCxNSw"); // Replace with your public key
-    })();
-</script>
-
-        <script type="text/javascript">
-        $("#contactUsForm").validate({
-            rules: {
-                name: {
-                    required: true,
-                },
-                email: {
-                    required: true,
-                },
-                contact_number: {
-                    required: true,
-                },
-                company_name: {
-                    required: true,
-                },
-                service: {
-                    required: true,
-                },
-                city: {
-                    required: true,
-                },
-                message: {
-                    required: true,
-                },
-            },
-            messages: {
-                name: "Please enter name!",
-                email: "Please enter email!",
-                contact_number: "Please enter contact number!",
-                company_name: "Please enter company name!",
-                service: "Please choose service!",
-                city: "Please choose city!",
-                message: "Please enter message!",
-            },
-            submitHandler: function(form) {
-    $('#contactUsFormBtn').attr('disabled', true);
-    $('#contactUsFormBtn').html('Sending <i class="fa fa-spinner fa-spin"></i>');
-    
-    // Collect form data
-    var formData = {
-        name: $('#name').val(),
-        email: $('#email').val(),
-        contact_number: $('#contact_number').val(),
-        company_name: $('#company_name').val(),
-        service: $('#service').val(),
-        city: $('#city').val(),
-        message: $('#message').val()
-    };
-    
-    // Send via EmailJS
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
-        .then(function(response) {
-            $('#contactUsForm')[0].reset();
-            $('#contactUsFormBtn').attr('disabled', false);
-            $('#contactUsFormBtn').html('Submit');
-            toastr.success('Thank you! Your message has been sent successfully.');
-        }, function(error) {
-            $('#contactUsFormBtn').attr('disabled', false);
-            $('#contactUsFormBtn').html('Submit');
-            toastr.error('Failed to send message. Please try again.');
-        });
-    
-    return false;
-}
-        });
-    </script>
-
+      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-        function checkFormCompletion() {
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const contactNumber = document.getElementById('contact_number').value.trim();
-            const companyName = document.getElementById('company_name').value.trim();
-            const service = document.getElementById('service').value.trim();
-            const city = document.getElementById('city').value.trim();
-            const message = document.getElementById('message').value.trim();
-            const checkbox = document.getElementById('flexCheckDefault').checked;
-
-            const submitButton = document.getElementById('contactUsFormBtn');
-            submitButton.disabled = !(name && email && contactNumber && companyName && service && city && message &&
-                checkbox);
-        }
-
-        const formFields = document.querySelectorAll('.form-control');
-        formFields.forEach(field => {
-            field.addEventListener('input', checkFormCompletion);
-        });
-
-        const checkbox = document.getElementById('flexCheckDefault');
-        checkbox.addEventListener('change', checkFormCompletion);
-        document.getElementById('name').addEventListener('input', function(e) {
-            this.value = this.value.replace(/[^a-zA-Z]/g, '');
-        });
-        document.getElementById('city').addEventListener('input', function(e) {
-            this.value = this.value.replace(/[^a-zA-Z]/g, '');
-        });
-        document.getElementById('contact_number').addEventListener('input', function(e) {
-            // Remove any non-numeric characters
-            this.value = this.value.replace(/[^0-9]/g, '');
-
-            // Ensure the value is within the allowed length
-            if (this.value.length > 12) {
-                this.value = this.value.slice(0, 12);
-            }
-        });
-
-        document.getElementById('contact_number').addEventListener('blur', function(e) {
-            // Check if the input length is less than 10 characters
-            if (this.value.length < 10) {
-                alert('Contact number must be at least 10 digits long.');
-                this.focus();
-            }
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            toastr.options.timeOut = 10000;
+        // Initialize EmailJS (get your public key from EmailJS dashboard)
+        emailjs.init('JvbeSHly8I9hCxNSw');
+        
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-                    });
-
-        $("#newsLetterForm").validate({
-        rules: { name: { required: true, }, email: { required: true, }, mobile: { required: true, }, }, messages: {
-        name: "Please enter name!" , email: "Please enter email!" , mobile: "Please enter mobile number!" , },
-        submitHandler: function(form) { $('#newsLetterFormBtn').attr('disabled', true);
-        $('#newsLetterFormBtn').html('Processing <i class="fa fa-spinner fa-spin"></i>');
-    var serializedData = $(form).serialize();
-    $.ajax({
-    headers: {
-    'X-CSRF-Token': $('input[name="_token"]').val()
-    },
-    type: 'post',
-    url: "tututututut",
-    data: serializedData,
-    dataType: 'json',
-    success: function(data) {
-    if (data.status == true) {
-    swal({
-    title: "Thank You!",
-    text: "",
-    icon: "success",
-    }).then(function (isConfirm) {
-    if (isConfirm) {
-    $('#newsLetterForm')[0].reset()
-    $('#newsLetterFormBtn').attr('disabled', false);
-    $('#newsLetterFormBtn').html('Submit');
-    }
-    });
-    }
-    if (data.status == false) {
-    swal({
-    text: "Something went wrong!",
-    icon: "info",
-    })
-    }
-    }
-    });
-    return false;
-    }
-    });
+            // Prepare email parameters
+            const templateParams = {
+                from_name: document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Send email
+            emailjs.send('service_yr4vr1w', 'template_gz91lzx', templateParams)
+                .then(function(response) {
+                    alert('Thank you! Your message has been sent.');
+                    document.getElementById('contactForm').reset();
+                    window.location.href = "/"; // Redirect to home
+                }, function(error) {
+                    alert('Failed to send message. Please try again.');
+                });
+        });
     </script>
-    
-
 
 </body></html>
