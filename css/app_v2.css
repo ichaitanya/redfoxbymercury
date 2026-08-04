@@ -1492,6 +1492,7 @@ span.rotated {
 ===============================================*/
 .partner-section {
     position: relative;
+    margin-top: 90px;
 }
 .partner-circle {
     position: absolute;
@@ -2095,7 +2096,7 @@ footer {
 ===============================================*/
 .why-choose-us {
     position: relative;
-    padding: 30px 0;
+    padding: 30px 0 120px;
     background: linear-gradient(to bottom, #2e2e2e 60%, #000000 90%);
     z-index: 5;
 }
@@ -2148,12 +2149,14 @@ footer {
 }
 @media (min-width: 992px) {
     .why-choose-us {
-        padding: 80px 0;
+        padding: 80px 0 180px;
     }
     .why-choose-us .wh-card {
         position: absolute;
         right: 120px;
+        bottom: 20px;
         display: flex;
+        z-index: 1;
     }
     .why-choose-us .wh-card .card {
         padding: 30px;
